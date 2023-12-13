@@ -5,4 +5,6 @@ import com.example.hourscounter.model.Employee;
 
 public interface EmployeeService {
     EmployeeDTO createEmployee(Employee employee);
+
+    EmployeeDTO findEmployeeDtoById(String id);
 }
