@@ -1,6 +1,109 @@
 databaseChangeLog:
   - changeSet:
-      id: 0
-      author: admin
+      id: works
+      author: sebi
+
       changes:
-        -
+        - createTable:
+            tableName: works
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: job_type
+                  type: varchar(50)
+              - column:
+                  name: area
+                  type: decimal(16,2)
+              - column:
+                  name: price
+                  type: double
+  - changeSet:
+      id: jobs
+      author: sebi
+
+      changes:
+        - createTable:
+            tableName: jobs
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: job_status
+                  type: varchar(50)
+              - column:
+                  name: date
+                  type: timestamp
+              - column:
+                  name: address
+                  type: varchar(255)
+              - column:
+                  name: distance
+                  type: double
+              - column:
+                  name: hours
+                  type: varchar(5)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: money
+                  type: decimal(16,2)
+  - changeSet:
+      id: employees
+      author: sebi
+
+      changes:
+        - createTable:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: employee_status
+                  type: varchar(50)
+              - column:
+                  name: employee_type
+                  type: varchar(50)
+              - column:
+                  name: first_name
+                  type: varchar(255)
+              - column:
+                  name: last_name
+                  type: varchar(255)
+              - column:
+                  name: birthday
+                  type: timestamp
+              - column:
+                  name: street
+                  type: varchar(255)
+              - column:
+                  name: plz
+                  type: decimal(5,0)
+              - column:
+                  name: city
+                  type: varchar(255)
+              - column:
+                  name: nationality
+                  type: varchar(50)
+              - column:
+                  name: phone
+                  type: varchar(13)
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: euro_pro_hour
+                  type: decimal(16,2)
+              - column:
+                  name: password
+                  type: varchar(255)

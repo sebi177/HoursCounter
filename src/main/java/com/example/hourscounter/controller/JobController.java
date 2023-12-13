@@ -1,2 +1,4 @@
-package com.example.hourscounter.controller;public class JobController {
+package com.example.hourscounter.controller;
+
+public class JobController {
 }

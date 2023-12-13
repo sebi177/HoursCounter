@@ -1,2 +1,9 @@
-package com.example.hourscounter.dto;public class EmployeeDTO {
+package com.example.hourscounter.dto;
+
+import lombok.Data;
+
+@Data
+public class EmployeeDTO {
+    private String firstName;
+    private String lastName;
 }
