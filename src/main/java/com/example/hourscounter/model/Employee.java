@@ -2,16 +2,14 @@ package com.example.hourscounter.model;
 
 import com.example.hourscounter.model.enums.EmployeeStatus;
 import com.example.hourscounter.model.enums.EmployeeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -22,6 +20,7 @@ public class Employee {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "employee_status")
@@ -65,4 +64,36 @@ public class Employee {
 
     @ManyToMany
     private List<Job> jobList;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", employeeStatus=" + employeeStatus +
+                ", employeeType=" + employeeType +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDay=" + birthDay +
+                ", street='" + street + '\'' +
+                ", PLZ='" + PLZ + '\'' +
+                ", city='" + city + '\'' +
+                ", nationality='" + nationality + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", EuroProHour=" + EuroProHour +
+                '}';
+    }
 }

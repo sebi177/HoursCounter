@@ -9,4 +9,6 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 public interface JobMapper {
 
     JobDTO toDTO(Job job);
+
+
 }

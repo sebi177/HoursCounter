@@ -1,6 +1,7 @@
 package com.example.hourscounter.mapper;
 
 import com.example.hourscounter.dto.EmployeeDTO;
+import com.example.hourscounter.dto.EmployeeToCreateDTO;
 import com.example.hourscounter.model.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
@@ -9,6 +10,8 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 public interface EmployeeMapper {
 
     EmployeeDTO toDTO(Employee employee);
+
+    Employee toEntity(EmployeeToCreateDTO dto);
 
 
 }
