@@ -23,13 +23,13 @@ public class JobServiceImpl implements JobService {
         return jobMapper.toDTO(jobRepository.save(job));
     }
 
+    @Override
     public Double calculatePrice(List<Work> works, List<Employee> workers){
-        Double money = 0.0;
-        for (int i = 0; i < works.size(); i++) {
-            Work work = works.get(i);
-            money+=work.getPrice();
-        }
-        return money / workers.size();
+        double sum = works.stream().map(Work::getPrice)
+                .mapToDouble(Double::doubleValue)
+                .sum();
+
+        return sum / workers.size();
     }
 
 }
