@@ -23,10 +23,11 @@ public class Job {
     private UUID id;
 
     @Column(name = "job_status")
+    @Enumerated(EnumType.STRING)
     private JobStatus jobStatus;
 
-    @Column(name = "date")
-    private LocalDate termin;
+    @Column(name = "appointment")
+    private LocalDate appointment;
 
     @Column(name = "address")
     private String address;
@@ -48,4 +49,5 @@ public class Job {
 
     @ManyToMany
     private List<Work> works;
+
 }

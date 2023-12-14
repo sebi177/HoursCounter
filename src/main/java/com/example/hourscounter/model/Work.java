@@ -21,6 +21,7 @@ public class Work {
     private UUID id;
 
     @Column(name = "job_type")
+    @Enumerated(EnumType.STRING)
     private JobType jobType;
 
     @Column(name = "area")

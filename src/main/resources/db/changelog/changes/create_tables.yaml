@@ -38,7 +38,7 @@ databaseChangeLog:
                   name: job_status
                   type: varchar(50)
               - column:
-                  name: date
+                  name: appointment
                   type: timestamp
               - column:
                   name: address
