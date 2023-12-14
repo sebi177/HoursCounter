@@ -8,8 +8,8 @@ databaseChangeLog:
             tableName: works
             columns:
               - column:
-                  name: uuid
-                  type: uuid
+                  name: id
+                  type: binary(16)
                   constraints:
                     primaryKey: true
               - column:
@@ -31,7 +31,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: binary(16)
                   constraints:
                     primaryKey: true
               - column:
@@ -65,7 +65,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: binary(16)
                   constraints:
                     primaryKey: true
               - column:

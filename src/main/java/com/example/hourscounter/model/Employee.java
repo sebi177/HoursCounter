@@ -16,6 +16,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "employees")
 public class Employee {
 
     @Id
@@ -24,9 +25,11 @@ public class Employee {
     private UUID id;
 
     @Column(name = "employee_status")
+    @Enumerated(EnumType.STRING)
     private EmployeeStatus employeeStatus;
 
     @Column(name = "employee_type")
+    @Enumerated(EnumType.STRING)
     private EmployeeType employeeType;
 
     @Column(name = "first_name")

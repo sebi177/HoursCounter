@@ -10,6 +10,7 @@ import com.example.hourscounter.repository.EmployeeRepository;
 import com.example.hourscounter.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -22,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
+    @Transactional
     public EmployeeDTO createEmployee(EmployeeToCreateDTO employeeDTO){
         Employee employee = employeeMapper.toEntity(employeeDTO);
         employeeRepository.save(employee);

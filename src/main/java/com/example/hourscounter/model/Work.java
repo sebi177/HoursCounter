@@ -16,9 +16,9 @@ import java.util.UUID;
 public class Work {
 
     @Id
-    @Column(name = "uuid")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID uuid;
+    private UUID id;
 
     @Column(name = "job_type")
     private JobType jobType;

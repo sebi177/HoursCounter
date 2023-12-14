@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/account")
+@RequestMapping("/employee")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
